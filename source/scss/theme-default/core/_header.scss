@@ -1,0 +1,188 @@
+/* ====================================   Header's style   ==================================== */
+
+#site-header {
+    // height: 230px;
+    margin-bottom: 35px;
+    z-index: 10;
+    .top-header {
+        position: relative;
+        background: #ac99dd;
+        /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(bottom, #8b7bb2, #c5affd);
+        /*Safari 5.1-6*/
+        background: -o-linear-gradient(top, #8b7bb2, #c5affd);
+        /*Opera 11.1-12*/
+        background: -moz-linear-gradient(top, #8b7bb2, #c5affd);
+        /*Fx 3.6-15*/
+        background: linear-gradient(to top, #8b7bb2, #c5affd);
+        /*Standard*/
+        &::before {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        height: 160px;
+        // background: url(../images/header-bg.png) center 0 no-repeat;
+        .site-wrap {
+            position: relative;
+            height: inherit;
+            .logo {
+                margin-top: 0;
+                margin-bottom: 0;
+                position: absolute;
+                left: 0;
+                bottom: -45px;
+                z-index: 3;
+                @include haf() {
+                    background-color: white;
+                    img {
+                        opacity: 0.9;
+                        @include transition(all, 0.2, linear);
+                    }
+                }
+            }
+            .qc {
+                top: 35px;
+                right: 40px;
+                position: absolute;
+                margin-bottom: 0;
+            }
+            time {
+                position: absolute;
+                right: 0;
+                bottom: 10px;
+                color: black;
+            }
+        }
+    }
+    .navigation {
+        @include clearfix;
+        height: 35px;
+        background-color: $brand-primary;
+        ul {
+            padding-left: 183px;
+        }
+        li {
+            float: left;
+            position: relative;
+            @include font-size(14, 35);
+            @include transition(background-color, 0.2, ease-out);
+            @include haf() {
+                background-color: darken($brand-primary, 5%);
+                .sub-cate {
+                    display: block;
+                }
+            }
+            a {
+                display: block;
+                color: white;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .sub-cate {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 10px 0;
+                min-width: 200px;
+                background-color: darken($brand-primary, 5%);
+                z-index: 3;
+                li {
+                    display: block;
+                    float: none;
+                    &:hover {
+                        background-color: darken($brand-primary, 8%);
+                    }
+                }
+            }
+            .sprites-search {
+                color: white;
+                margin-left: 12px;
+                margin-right: 12px;
+                cursor: pointer;
+                line-height: 35px;
+            }
+            &.search {
+                position: relative;
+                &.active {
+                    background-color: darken($brand-primary, 5%);
+                }
+                .search-box {
+                    @include clearfix;
+                    background-color: inherit;
+                    padding: 10px;
+                    width: 480px;
+                    position: absolute;
+                    right: 0;
+                    top: 100%;
+                    display: none;
+                    z-index: 2;
+                    input {
+                        width: 80%;
+                        float: left;
+                    }
+                    button {
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+    .time-global {
+        margin-top: 18px;
+        @include font-size(14, 17);
+    }
+}
+
+
+/* header for category & detail page */
+
+.category-page,
+.detail-page {
+    #site-header {
+        .top-header {
+            &::before {
+                // background-color: rgba(0, 0, 0, 0.3);
+            }
+            .site-wrap {
+                time {
+                    color: white;
+                }
+            }
+            .category-title {
+                @include font-size(40, 40);
+                text-shadow: 2px 2px #000;
+                position: relative;
+                top: 60px;
+                left: 0;
+                right: 0;
+                margin: 0;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: normal;
+                a {
+                    color: white;
+                }
+            }
+            .logo {
+                img {
+                    height: 70px;
+                    width: auto;
+                }
+            }
+            .qc {
+                right: 65px;
+            }
+        }
+        .navigation ul {
+            padding-left: 133px;
+            .sub-cate {
+                padding-left: 0;
+            }
+        }
+    }
+}
