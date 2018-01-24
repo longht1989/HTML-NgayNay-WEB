@@ -14,7 +14,6 @@
 
 .main-article {
     position: relative;
-    // padding: 0 10px;
     .article-hdr {
         // header article 
         .article-title {
@@ -418,8 +417,7 @@
                     }
                 }
             }
-        }
-        // related inline story
+        } // related inline story
         .related-inline-story {
             margin-bottom: 10px;
             background-color: #f7f7f7;
@@ -469,7 +467,7 @@
             }
         }
         .article-comments {
-            > header {
+            >header {
                 .comments-hdr {
                     margin: 0 0 10px;
                     @include font-size(20, 26);
@@ -593,6 +591,17 @@
                 }
             }
         }
+        .article-meta {
+            text-align: right;
+            font-size: 14px;
+            a {
+                color: #666666;
+                cursor: pointer;
+                &:hover {
+                    color: $brand-primary;
+                }
+            }
+        }
     }
 }
 
@@ -623,10 +632,13 @@
 }
 
 
+
+
+
 /* same category  */
 
 .main-article {
-    & + .zone {
+    &+.zone {
         width: initial;
         float: none;
         margin-top: 10px;
